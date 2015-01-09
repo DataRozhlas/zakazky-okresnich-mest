@@ -55,3 +55,5 @@ for (i in zadavatele$id) {
         }
 }
 
+save(zakazky, file="data/zakazky.R")
+save(zadavatele, file="data/zadavatele.R")
