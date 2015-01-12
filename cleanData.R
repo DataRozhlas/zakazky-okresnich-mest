@@ -62,7 +62,23 @@ zakazky3  <- data.frame(
         nazev=zakazky2$nazev,
         nabidek=zakazky2$pocet_nabidek,
         eu=zakazky2$podporeno_eu,
-        datum=as.Date(zakazky2$datum_zadani)
+        datum=zakazky2$datum_zadani
         )
 
 save(zakazky3, file="data/zakazky_clean.R")
+
+zakazky4 <- data.frame(
+        mesto = zakazky3$zadavatel,
+        datum = as.Date(zakazky3$datum),
+        zadavatel = paste0("<a href='", zakazky3$zadavatelURL, "' target='_blank'>", zakazky3$zadavatel, "</a>"),
+        dodavatel = paste0("<a href='", zakazky3$dodavatelURL, "' target='_blank'>", zakazky3$dodavatel, "</a>"),
+        cena = zakazky3$cena,
+        nazev = paste0("<a href='", zakazky3$URLzakazky, "' target='_blank'>", zakazky3$nazev, "</a>"),
+        rizení = zakazky3$rizeni,
+        nabidek = zakazky3$nabidek,
+        zdroj = paste0("<a href='", zakazky3$zdrojURL, "' target='_blank'>", zakazky3$zdroj, "</a>")
+)
+
+save(zakazky4, file="zakazky/data/zakazky4.R")
+
+write.csv(zakazky3, file="zakazky/zakazky3.csv", row.names = F)
