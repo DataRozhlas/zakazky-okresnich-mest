@@ -46,15 +46,15 @@ zakazky2  <- merge(zakazky2, typzakazky, by.x="typ_zakazky", by.y="api")
 zakazky2  <- merge(zakazky2, zadavatel, by.x="zadavatel", by.y="api")
 
 zakazky3  <- data.frame(
-        zadavatel=zakazky2[,24],
+        zadavatel=zakazky2[,25],
         zadavatelURL=paste0("http://vsechnyzakazky.cz/zadavatel/detail/", substr(zakazky2$zadavatel, 18, 24)),
-        dodavatel=zakazky2[,21],
+        dodavatel=zakazky2[,22],
         dodavatelURL=paste0("http://vsechnyzakazky.cz/dodavatel/detail/", substr(zakazky2$dodavatel, 18, 24)),
-        rizeni=zakazky2[,22],
+        rizeni=zakazky2[,23],
         URLzakazky=paste0("http://vsechnyzakazky.cz/zakazka/detail/", substr(zakazky2$resource_uri, 16, 23)),
         cena=zakazky2$cena,
         cenaCelkem=zakazky2$cena_celkem,
-        odvetvi=zakazky2[,23],
+        odvetvi=zakazky2[,24],
         zdroj=zakazky2$zdroj_nazev,
         zdrojURL=zakazky2$zdroj,
         ramcovaSmlouva=zakazky2$ramcova_smlouva,
