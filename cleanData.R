@@ -62,7 +62,8 @@ zakazky3  <- data.frame(
         nazev=zakazky2$nazev,
         nabidek=zakazky2$pocet_nabidek,
         eu=zakazky2$podporeno_eu,
-        datum=zakazky2$datum_zadani
+        datum=zakazky2$datum_zadani,
+        ico=zakazky2$ico
         )
 
 save(zakazky3, file="data/zakazky_clean.R")
@@ -79,6 +80,7 @@ zakazky4 <- data.frame(
         zdroj = paste0("<a href='", zakazky3$zdrojURL, "' target='_blank'>", zakazky3$zdroj, "</a>")
 )
 
-save(zakazky4, file="zakazky/data/zakazky4.R")
+save(zakazky4, file="zakazky/zakazky4.R")
 
 write.csv(zakazky3, file="zakazky/zakazky3.csv", row.names = F)
+
