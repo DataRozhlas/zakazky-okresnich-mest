@@ -19,7 +19,41 @@ shinyServer(function(input, output) {
                                  c(10, 50, 100, 1000, -1),
                                  c("10", "50", "100", "1000", "Všechno")
                          ),
-                         pageLength = 10
+                         pageLength = 10,
+                         columnDefs = list(
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 0)
+                                 ),
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 1)
+                                 ),
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 2)
+                                 ),
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 3)
+                                 ),
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 4)
+                                 ),
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 5)
+                                 ),
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 6)
+                                 ),
+                                 list(
+                                         list("name", "engine"),
+                                         list("targets", 7)
+                                 )
+                         )
                  ),
                 escape=FALSE
         )
