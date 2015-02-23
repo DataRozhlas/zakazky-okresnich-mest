@@ -3,7 +3,7 @@ library(rvest)
 library(jsonlite)
 library(dplyr)
 
-obce  <- read.xlsx("data//obce.xls", 1)
+obce  <- read.xlsx("data/obce.xls", 1)
 
 krajska  <- c("Brno", "České Budějovice", "Hradec Králové", "Jihlava", "Karlovy Vary", "Liberec", "Olomouc", "Ostrava", "Pardubice", "Plzeň", "Praha", "Ústí nad Labem", "Zlín")
 
@@ -83,4 +83,3 @@ save(zadavatele, file="data/zadavatele.R")
 
 # ičo a názvy obcí + počet obyvatel
 obce_ico <- read.csv("data/obce_ico.csv")
-

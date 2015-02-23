@@ -1,6 +1,5 @@
+zakazky4 <- read.csv("zakazky4.csv")
 shinyServer(function(input, output) {
-        zakazky4 <- read.csv("zakazky4.csv")
-        
         output$filtrovanaTabulka <- renderDataTable(
                 {vysledek <- zakazky4
                 if (!is.null(input$vybraneMesto)) {vysledek <- vysledek[vysledek$mesto %in% input$vybraneMesto, ]}
@@ -21,24 +20,10 @@ shinyServer(function(input, output) {
                                  c("10", "50", "100", "1000", "Všechno")
                          ),
                          pageLength = 10
-                 )
+                 ),
+                escape=FALSE
         )
-        
-        output$histogram <- renderPlot({
-                vysledek <- zakazky4
-                if (!is.null(input$vybraneMesto)) {vysledek <- vysledek[vysledek$mesto %in% input$vybraneMesto, ]}
-                vysledek <- vysledek[as.Date(vysledek$datum) > input$vybraneDatum[1] & as.Date(vysledek$datum) < input$vybraneDatum[2], ]
-                vysledek <- vysledek[vysledek$cena>=input$cenaMin, ]
-                vysledek <- vysledek[vysledek$cena<=input$cenaMax, ]
-                if (input$radit==2) {vysledek <- vysledek[order(vysledek$cena, decreasing=TRUE),]}
-                if (input$radit==1) {vysledek <- vysledek[order(vysledek$datum, decreasing=TRUE),]}
-                options(scipen=999)
-                hist(vysledek$cena,
-                     main = "Rozložení cen vybraných zakázek (kolik je levných a kolik drahých)",
-                     breaks = 1000000,
-                     xlab = "vysoutěžená cena v Kč")
-        })
-        
+         
         output$souhrnneInfo <- renderText({
                 vysledek <- zakazky4
                 if (!is.null(input$vybraneMesto)) {vysledek <- vysledek[vysledek$mesto %in% input$vybraneMesto, ]}

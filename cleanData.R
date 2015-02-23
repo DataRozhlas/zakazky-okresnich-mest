@@ -69,18 +69,19 @@ zakazky3  <- data.frame(
 save(zakazky3, file="data/zakazky_clean.R")
 
 zakazky4 <- data.frame(
-        mesto = zakazky3$zadavatel,
-        datum = as.Date(zakazky3$datum),
-        zadavatel = paste0("<a href='", zakazky3$zadavatelURL, "' target='_blank'>", zakazky3$zadavatel, "</a>"),
-        dodavatel = paste0("<a href='", zakazky3$dodavatelURL, "' target='_blank'>", zakazky3$dodavatel, "</a>"),
-        cena = zakazky3$cena,
-        nazev = paste0("<a href='", zakazky3$URLzakazky, "' target='_blank'>", zakazky3$nazev, "</a>"),
-        rizení = zakazky3$rizeni,
-        nabidek = zakazky3$nabidek,
-        zdroj = paste0("<a href='", zakazky3$zdrojURL, "' target='_blank'>", zakazky3$zdroj, "</a>")
+        mesto = zakazky_ico$NAZOB,
+        datum = as.Date(zakazky_ico$datum),
+        zadavatel = paste0("<a href=\"", zakazky_ico$zadavatelURL, "\" target=\"_blank\">", zakazky_ico$NAZOB, "</a>"),
+        dodavatel = paste0("<a href=\"", zakazky_ico$dodavatelURL, "\" target=\"_blank\">", zakazky_ico$dodavatel, "</a>"),
+        cena = zakazky_ico$cena,
+        nazev = paste0("<a href=\"", zakazky_ico$URLzakazky, "\" target=\"_blank\">", zakazky_ico$nazev, "</a>"),
+        rizení = zakazky_ico$rizeni,
+        nabidek = zakazky_ico$nabidek,
+        zdroj = paste0("<a href=\"", zakazky_ico$zdrojURL, "\" target=\"_blank\">", zakazky_ico$zdroj, "</a>")
 )
 
-save(zakazky4, file="zakazky/zakazky4.R")
+save(zakazky4, file="zakazky/zakazky.R")
 
 write.csv(zakazky3, file="zakazky/zakazky3.csv", row.names = F)
+write.csv(zakazky4, file="zakazky/zakazky4.csv", row.names = F)
 

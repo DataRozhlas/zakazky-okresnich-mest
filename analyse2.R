@@ -64,6 +64,11 @@ for (i in unique(export$mesto)) {
                 filter(volebni==TRUE & mesto==i) %>%
                 select(-volebni, -mesto) %>%
                 arrange(desc(cena))
-        if (nrow(vysledek)>0) {write.xlsx2(data.frame(vysledek), file=paste0("output/zakazky-kolem-voleb/", i, ".xlsx"), row.names=F)}
+        if (nrow(vysledek)>0) {write.xlsx2(data.frame(vysledek), file=paste0("output/zakazky-kolem-voleb/", cleanString(i), ".xlsx"), row.names=F)}
+}
+
+cleanString <- function(x){
+        tmp <- iconv(x, from="UTF8", to ="ASCII//TRANSLIT")
+        gsub("[^[:alpha:]]", "", tmp)
 }
 
