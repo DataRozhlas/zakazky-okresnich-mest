@@ -4,7 +4,7 @@ shinyUI(fluidPage(
         
         h1("Utrácelo vaše město před volbami víc než jindy?"),
         
-        p("Aplikace pro interní potřeby Centra zpravodajství ČRo. Datum zakázky je datum, kdy byla uveřejněna ve věstníku veřejných zakázek, obvykle do jednoho měsíce od výběru dodavatele. Proto sledujeme nejen období před volbami, ale i krátce po volbách, kdy se ve věstníku ještě objevují zakázky schválené předchozím zastupitelstvem. Tečkovaná čára značí termín voleb, modře vyznačené je období od začátku srpna do konce listopadu. Zdroj dat:",
+        p("Čím strmější křivka, tím rychlejší utrácení. Datum zakázky je datum, kdy byla uveřejněna ve věstníku veřejných zakázek, obvykle do jednoho měsíce od výběru dodavatele. Proto sledujeme nejen období před volbami, ale i krátce po volbách, kdy se ve věstníku ještě objevují zakázky schválené předchozím zastupitelstvem. Tečkovaná čára značí termín voleb, modře vyznačené je období od začátku srpna do konce listopadu. Zdroj dat:",
                 a("http://www.vsechnyzakazky.cz/",
                   href = "http://www.vsechnyzakazky.cz/data/")),
         
